@@ -1,0 +1,242 @@
+<%
+    #
+    # THE ENOUGH.VIM COLORSCHEME WAS DESIGNED BY ELLIOT JACKSON USING THE RNB
+    # COLORSCHEME TEMPLATE BY ROMAIN LAFOURCADE
+    #
+    # Colorscheme author: Elliot Jackson [https://github.com/elliotekj]
+    # URL: https://github.com/elliotekj/enough.vim
+    #
+    # Template author: Romain Lafourcade [https://github.com/romainl]
+    # URL: https://gist.github.com/romainl/5cd2f4ec222805f49eca
+    #
+
+    information = {
+        author:      "Elliot Jackson",
+        email:       "elliot@elliotekj.com",
+        name:        "enough",
+        description: "A minimal Vim colorscheme searching for balance.",
+        background:  "dark",
+        webpage:     "http://elliotekj.com",
+        colorscheme_url: "https://github.com/elliotekj/enough.vim"
+    }
+
+    # COLORS
+    # The format is: [HEX_COLOR, 256_COLOR, FALLBACK_COLOR]
+    black       = ["#000000", 0, "black"]
+    blue        = ["#0087d7", 32, "blue"]
+    darkgray    = ["#080808", 232, "darkgray"]
+    gray        = ["#4e4e4e", 239, "gray"]
+    green       = ["#5f1f00", 70, "green"]
+    lightgray   = ["#767676", 243, "gray"]
+    orange      = ["#ff5f00", 202, "darkyellow"]
+    red         = ["#ff0000", 196, "red"]
+    white       = ["#e4e4e4", 254, "white"]
+    yellow      = ["#d7d700", 184, "yellow"]
+
+    # HIGHLIGHT GROUPS
+    # The format is: [HIGHLIGHT_GROUP, BG_COLOR, FG_COLOR, STYLE]
+    highlights = [
+        # Vim editor colors
+        ["Normal",                black, white, "NONE"],
+        ["Bold",                  "NONE", "NONE", "bold"],
+        ["Debug",                 "NONE", "NONE", "NONE"],
+        ["Directory",             "NONE", blue, "NONE"],
+        ["Error",                 red, white, "NONE"],
+        ["ErrorMsg",              red, white, "NONE"],
+        ["Exception",             "NONE", white, "NONE"],
+        ["FoldColumn",            "NONE", white, "NONE"],
+        ["Folded",                darkgray, gray, "NONE"],
+        ["IncSearch",             green, white, "NONE"],
+        ["Italic",                "NONE", "NONE", "NONE"],
+        ["Macro",                 "NONE", lightgray, "NONE"],
+        ["MatchParen",            gray, white, "NONE"],
+        ["ModeMsg",               "NONE", white, "NONE"],
+        ["MoreMsg",               "NONE", white, "NONE"],
+        ["Question",              "NONE", "NONE", "NONE"],
+        ["Search",                green, white, "NONE"],
+        ["Substitute",            "NONE", "NONE", "NONE"],
+        ["SpecialKey",            "NONE", "NONE", "NONE"],
+        ["TooLong",               "NONE", "NONE", "NONE"],
+        ["Underlined",            "NONE", white, "NONE"],
+        ["Visual",                lightgray, white, "NONE"],
+        ["VisualNOS",             lightgray, white, "NONE"],
+        ["WarningMsg",            orange, white, "NONE"],
+        ["WildMenu",              lightgray, white, "NONE"],
+        ["Title",                 "NONE", white, "NONE"],
+        ["Conceal",               "NONE", "NONE", "NONE"],
+        ["Cursor",                "NONE", white, "NONE"],
+        ["NonText",               "NONE", "NONE", "NONE"],
+        ["LineNr",                darkgray, gray, "NONE"],
+        ["SignColumn",            darkgray, white, "NONE"],
+        ["StatusLine",            "NONE", white, "NONE"],
+        ["StatusLineNC",          "NONE", white, "NONE"],
+        ["VertSplit",             darkgray, darkgray, "NONE"],
+        ["ColorColumn",           darkgray, gray, "NONE"],
+        ["CursorColumn",          darkgray, gray, "NONE"],
+        ["CursorLine",            darkgray, "NONE", "NONE"],
+        ["CursorLineNr",          darkgray, white, "NONE"],
+        ["QuickFixLine",          "NONE", white, "NONE"],
+        ["PMenu",                 lightgray, white, "NONE"],
+        ["PMenuSel",              blue, white, "NONE"],
+        ["TabLine",               darkgray, gray, "NONE"],
+        ["TabLineFill",           darkgray, gray, "NONE"],
+        ["TabLineSel",            lightgray, white, "NONE"],
+        ["SpellBad",              "NONE", red, "NONE"],
+        ["SpellCap",              "NONE", red, "NONE"],
+        ["SpellRare",             "NONE", "NONE", "NONE"],
+        ["SpellLocal",            "NONE", "NONE", "NONE"],
+
+        # Standard syntax highlighting
+        ["Boolean",               "NONE", blue, "NONE"],
+        ["Character",             "NONE", white, "NONE"],
+        ["Comment",               "NONE", gray, "NONE"],
+        ["Conditional",           "NONE", blue, "NONE"],
+        ["Constant",              "NONE", blue, "NONE"],
+        ["Define",                "NONE", white, "NONE"],
+        ["Delimiter",             "NONE", lightgray, "NONE"],
+        ["Float",                 "NONE", white, "NONE"],
+        ["Function",              "NONE", white, "NONE"],
+        ["Identifier",            "NONE", white, "NONE"],
+        ["Include",               "NONE", white, "NONE"],
+        ["Keyword",               "NONE", blue, "NONE"],
+        ["Label",                 "NONE", white, "NONE"],
+        ["Number",                "NONE", white, "NONE"],
+        ["Operator",              "NONE", lightgray, "NONE"],
+        ["PreProc",               "NONE", lightgray,"NONE"],
+        ["Repeat",                "NONE", blue, "NONE"],
+        ["Special",               "NONE", white, "NONE"],
+        ["SpecialChar",           "NONE", white, "NONE"],
+        ["Statement",             "NONE", white, "NONE"],
+        ["StorageClass",          "NONE", white, "NONE"],
+        ["String",                "NONE", white, "NONE"],
+        ["Structure",             "NONE", white, "NONE"],
+        ["Tag",                   "NONE", white, "NONE"],
+        ["Todo",                  blue, white, "NONE"],
+        ["Type",                  "NONE", white, "NONE"],
+        ["Typedef",               "NONE", white, "NONE"],
+
+        # Diff highlighting
+        ["DiffAdd",               "NONE", green, "NONE"],
+        ["DiffChange",            "NONE", orange, "NONE"],
+        ["DiffDelete",            "NONE", red, "NONE"],
+        ["DiffText",              "NONE", white, "NONE"],
+        ["DiffAdded",             "NONE", green, "NONE"],
+        ["DiffFile",              "NONE", white, "NONE"],
+        ["DiffNewFile",           "NONE", green, "NONE"],
+        ["DiffLine",              "NONE", blue, "NONE"],
+        ["DiffRemoved",           "NONE", red, "NONE"],
+
+        # ALE
+        # > https://github.com/dense-analysis/ale
+        ["ALEWarningSign",        darkgray, orange, "NONE"],
+        ["ALEErrorSign",          darkgray, red, "NONE"],
+
+        # COC
+        # > https://github.com/neoclide/coc.nvim
+        ["CocWarningFloat",       lightgray, white, "NONE"],
+        ["CocErrorFloat",         lightgray, white, "NONE"],
+        ["CocWarningSign",        darkgray, orange, "NONE"],
+        ["CocErrorSign",          darkgray, red, "NONE"],
+        ["CocInfoSign",           darkgray, lightgray, "NONE"],
+        ["CocHintSign",           darkgray, lightgray, "NONE"],
+        ["CocHintSign",           darkgray, lightgray, "NONE"],
+        ["CocErrorHighlight",     "NONE", red, "NONE"],
+        ["CocWarningHighlight",   "NONE", orange, "NONE"],
+
+        # GitGutter
+        # > https://github.com/airblade/vim-gitgutter
+        ["GitGutterAdd",          darkgray, green, "NONE"],
+        ["GitGutterChange",       darkgray, orange, "NONE"],
+        ["GitGutterChangeDelete", darkgray, orange, "NONE"],
+        ["GitGutterDelete",       darkgray, red, "NONE"],
+
+        # HTML
+        # > https://github.com/othree/html5.vim
+        ["htmlArg",               "NONE", blue, "NONE"],
+
+        # Javascript
+        # > https://github.com/pangloss/vim-javascript
+        # TODO
+
+        # Rust
+        # > https://github.com/rust-lang/rust.vim
+        ["rustAttribute",   "NONE", lightgray, "NONE"],
+        ["rustDerive",      "NONE", lightgray, "NONE"],
+        ["rustDeriveTrait", "NONE", lightgray, "NONE"],
+        ["rustAssert",      "NONE", blue, "NONE"],
+        ["rustStorage",     "NONE", blue, "NONE"],
+    ]
+
+    # HOW TO GENERATE THE COLORSCHEME
+    #
+    # Basic:
+    #
+    #     $ erb -T - enough.erb > colors/enough.vim
+    #
+    # With watchexec:
+    #
+    #     $ watchexec --exts erb 'erb -T - enough.erb > colors/enough.vim'
+    #
+    # From Vim:
+    #
+    #     :!erb -T - % > colors/%<.vim
+
+    #
+    # DON'T EDIT BEYOND THIS LINE.
+    #
+-%>
+"
+" <%= information[:name] %>.vim
+"
+" Author: <%= information[:author] %> (<%= information[:email] %>)
+" Webpage: <%= information[:webpage] %>
+" Description: <%= information[:description] %>
+" Colorscheme URL: <%= information[:colorscheme_url] %>
+
+hi clear
+
+if exists("syntax_on")
+  syntax reset
+endif
+
+let colors_name = "<%= information[:name].downcase %>"
+
+if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
+<% for highlight in highlights -%>
+<% if highlight.length == 4 -%>
+    hi <%= highlight[0] %> ctermbg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][1] %> ctermfg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][1] %> cterm=<%= highlight[3] %> guibg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][0] %> guifg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][0] %> gui=<%= highlight[3] %>
+<% if highlight[0] == "Normal" -%>
+<%= '' %>
+    set background=<%= information[:background] %>
+<%= '' %>
+<% end -%>
+<% elsif highlight.length > 4 -%>
+    hi <%= highlight[0] %> ctermbg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][1] %> ctermfg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][1] %> cterm=<%= highlight[3] %> guibg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][0] %> guifg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][0] %> gui=<%= highlight[3] %> guisp=<%= highlight[4].kind_of?(String) ? highlight[4] : highlight[4][0] %>
+<% end -%>
+<% end -%>
+
+elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
+    set t_Co=16
+<%= '' %>
+<% for highlight in highlights -%>
+<% if highlight.length > 2 -%>
+    hi <%= highlight[0] %> ctermbg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][2] %> ctermfg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][2] %> cterm=<%= highlight[3] %>
+<% if highlight[0] == "Normal" -%>
+<%= '' %>
+    set background=<%= information[:background] %>
+<%= '' %>
+<% end -%>
+<% end -%>
+<% end -%>
+endif
+<% links = highlights.select do |highlight| -%>
+<% highlight.length == 2 -%>
+<% end -%>
+<% if links.length > 0 -%>
+<%= '' %>
+<% for link in links -%>
+hi link <%= link[0] %> <%= link[1] %>
+<% end -%>
+<% end -%>
+
+" Generated with RNB (https://gist.github.com/romainl/5cd2f4ec222805f49eca)
