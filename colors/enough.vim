@@ -75,7 +75,7 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi Delimiter ctermbg=NONE ctermfg=243 cterm=NONE guibg=NONE guifg=#767676 gui=NONE
     hi Float ctermbg=NONE ctermfg=254 cterm=NONE guibg=NONE guifg=#e4e4e4 gui=NONE
     hi Function ctermbg=NONE ctermfg=254 cterm=NONE guibg=NONE guifg=#e4e4e4 gui=NONE
-    hi Identifier ctermbg=NONE ctermfg=254 cterm=NONE guibg=NONE guifg=#e4e4e4 gui=NONE
+    hi Identifier ctermbg=NONE ctermfg=32 cterm=NONE guibg=NONE guifg=#0087d7 gui=NONE
     hi Include ctermbg=NONE ctermfg=254 cterm=NONE guibg=NONE guifg=#e4e4e4 gui=NONE
     hi Keyword ctermbg=NONE ctermfg=32 cterm=NONE guibg=NONE guifg=#0087d7 gui=NONE
     hi Label ctermbg=NONE ctermfg=254 cterm=NONE guibg=NONE guifg=#e4e4e4 gui=NONE
@@ -118,6 +118,7 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi GitGutterChangeDelete ctermbg=232 ctermfg=202 cterm=NONE guibg=#080808 guifg=#ff5f00 gui=NONE
     hi GitGutterDelete ctermbg=232 ctermfg=196 cterm=NONE guibg=#080808 guifg=#ff0000 gui=NONE
     hi htmlArg ctermbg=NONE ctermfg=32 cterm=NONE guibg=NONE guifg=#0087d7 gui=NONE
+    hi rustIdentifier ctermbg=NONE ctermfg=254 cterm=NONE guibg=NONE guifg=#e4e4e4 gui=NONE
     hi rustAttribute ctermbg=NONE ctermfg=243 cterm=NONE guibg=NONE guifg=#767676 gui=NONE
     hi rustDerive ctermbg=NONE ctermfg=243 cterm=NONE guibg=NONE guifg=#767676 gui=NONE
     hi rustDeriveTrait ctermbg=NONE ctermfg=243 cterm=NONE guibg=NONE guifg=#767676 gui=NONE
@@ -187,7 +188,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi Delimiter ctermbg=NONE ctermfg=gray cterm=NONE
     hi Float ctermbg=NONE ctermfg=white cterm=NONE
     hi Function ctermbg=NONE ctermfg=white cterm=NONE
-    hi Identifier ctermbg=NONE ctermfg=white cterm=NONE
+    hi Identifier ctermbg=NONE ctermfg=blue cterm=NONE
     hi Include ctermbg=NONE ctermfg=white cterm=NONE
     hi Keyword ctermbg=NONE ctermfg=blue cterm=NONE
     hi Label ctermbg=NONE ctermfg=white cterm=NONE
@@ -230,6 +231,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi GitGutterChangeDelete ctermbg=darkgray ctermfg=darkyellow cterm=NONE
     hi GitGutterDelete ctermbg=darkgray ctermfg=red cterm=NONE
     hi htmlArg ctermbg=NONE ctermfg=blue cterm=NONE
+    hi rustIdentifier ctermbg=NONE ctermfg=white cterm=NONE
     hi rustAttribute ctermbg=NONE ctermfg=gray cterm=NONE
     hi rustDerive ctermbg=NONE ctermfg=gray cterm=NONE
     hi rustDeriveTrait ctermbg=NONE ctermfg=gray cterm=NONE
